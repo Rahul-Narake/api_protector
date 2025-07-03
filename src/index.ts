@@ -38,13 +38,12 @@ const checkForSuspiciousWords = (
 
   if (found) {
     const alertMessage = `Suspicious activity detected. Headers: ${headers}, Body: ${body}`;
-    console.log(alertMessage);
     req.suspiciousData = {
       headerSuspiciousWords,
       bodySuspiciousWords,
     };
   }
-
+  //call next function
   next();
 };
 
